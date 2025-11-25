@@ -1,0 +1,233 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Completely new color system: dark charcoal + emerald + champagne gold */
+    --background: 210 25% 8%;
+    --foreground: 0 0% 98%;
+    --card: 210 22% 12%;
+    --card-foreground: 0 0% 98%;
+    --popover: 210 22% 12%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 162 48% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 42 87% 70%;
+    --secondary-foreground: 210 25% 10%;
+    --muted: 210 20% 18%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 162 48% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 18% 20%;
+    --input: 210 18% 20%;
+    --ring: 162 48% 45%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    /* New sophisticated dark background with subtle texture */
+    background: linear-gradient(180deg, #0f1419 0%, #1a1f26 50%, #0f1419 100%);
+    color: hsl(var(--foreground));
+    font-feature_settings: "kern" 1, "liga" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(at 27% 37%, hsla(162, 48%, 45%, 0.03) 0px, transparent 50%),
+      radial-gradient(at 97% 21%, hsla(42, 87%, 70%, 0.03) 0px, transparent 50%),
+      radial-gradient(at 52% 99%, hsla(162, 48%, 45%, 0.02) 0px, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* New button styles with emerald + champagne theme */
+.btn-primary {
+  background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+  color: #ffffff;
+  font-weight: 700;
+  padding: 1rem 2.5rem;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  box-shadow: 0 4px 14px 0 rgba(16, 185, 129, 0.4);
+  text-transform: none;
+  letter-spacing: 0.01em;
+  font-size: 1rem;
+  position: relative;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  color: #1a1f26;
+  font-weight: 700;
+  padding: 1rem 2.5rem;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  text-transform: none;
+  letter-spacing: 0.01em;
+  font-size: 1rem;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5);
+}
+
+/* Clean badge design */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.3s;
+}
+
+.badge-primary {
+  background: rgba(52, 211, 153, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.badge-secondary {
+  background: rgba(251, 191, 36, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.rating-stars {
+  display: flex;
+  color: #ffc83a;
+  filter: drop-shadow(0 2px 8px rgba(255, 200, 58, 0.6));
+}
+
+/* Casino card with clean modern design */
+.casino-card {
+  background: linear-gradient(135deg, rgba(26, 31, 38, 0.95) 0%, rgba(20, 24, 30, 0.95) 100%);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+}
+
+.casino-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 200, 58, 0.03) 0%, transparent 50%, rgba(200, 180, 255, 0.03) 100%);
+  opacity: 0;
+  transition: opacity 0.6s;
+}
+
+.casino-card:hover::before {
+  opacity: 1;
+}
+
+.casino-card:hover {
+  border-color: rgba(52, 211, 153, 0.4);
+  box-shadow: 0 8px 32px rgba(52, 211, 153, 0.2);
+  transform: translateY(-4px);
+}
+
+/* Info card with elegant styling */
+.info-card {
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, rgba(26, 31, 38, 0.8) 0%, rgba(20, 24, 30, 0.8) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(52, 211, 153, 0.15);
+  border-color: rgba(52, 211, 153, 0.3);
+}
+
+/* New navigation link styles */
+.nav-link {
+  position: relative;
+  transition: all 0.3s;
+  font-weight: 500;
+  color: #9ca3af;
+}
+
+.nav-link:hover {
+  color: #34d399;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ffc83a 0%, #ffe17b 100%);
+  transition: width 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(255, 200, 58, 0.5);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.floating-btn {
+  transition: all 0.3s ease;
+}
+
+.floating-btn:hover {
+  box-shadow: 0 8px 24px rgba(52, 211, 153, 0.4);
+  transform: scale(1.05);
+}
+
+/* New animation for gradient text */
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+}
