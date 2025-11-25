@@ -85,7 +85,7 @@ export function Footer() {
 
         <div className="mb-10">
           <p className="text-xs uppercase tracking-widest text-gray-600 mb-6 text-center">Odgovorno kockanje</p>
-          <div className="flex flex-wrap gap-8 items-center justify-center">
+          <div className="flex flex-wrap gap-8 items-center justify-center bg-white rounded-lg p-8">
             <a
               href="https://www.hupis.hr/klok"
               target="_blank"
@@ -151,9 +151,9 @@ export function Footer() {
               <Image
                 src="/pbsvi.svg"
                 alt="PBSVI"
-                width={90}
-                height={36}
-                className="h-7 w-auto object-contain transition-all"
+                width={180}
+                height={56}
+                className="h-14 w-auto object-contain transition-all"
               />
             </a>
           </div>
