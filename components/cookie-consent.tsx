@@ -46,7 +46,7 @@ export function CookieConsent() {
   return (
     <>
       <div className="fixed bottom-0 inset-x-0 z-50 animate-in slide-in-from-bottom duration-700">
-        <div className="bg-gradient-to-r from-[#0f1829]/98 via-[#1a2744]/98 to-[#0f1829]/98 backdrop-blur-2xl border-t-2 border-[#FDB744]/30 shadow-[0_-15px_60px_rgba(253,183,68,0.15)]">
+        <div className="bg-black border-t-2 border-[#FDB744]/30 shadow-[0_-15px_60px_rgba(253,183,68,0.15)]">
           <div className="container mx-auto max-w-7xl px-6 lg:px-8 py-8 md:py-10">
             <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-10">
               <div className="flex items-start gap-5 flex-1">
